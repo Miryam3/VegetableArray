@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetables Array</title>
+</head>
+
+<body>
+    <script>
+        const vegetables = ["tomato", "onion", "lettuce", "carrot", "cucumber"];
+
+        async function delay(ms) {
+            return new Promise((resolve) => {
+                setTimeout(resolve, ms);
+            });
+        }
+
+
+        async function showVegetables(i) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log(vegetables[i]);
+                    resolve();
+                });
+            });
+        }
+
+        async function doVegetables() {
+            for (let i = 0; i < vegetables.length; i++) {
+                await delay(4000);
+                await showVegetables(i);
+            }
+        }
+
+        doVegetables();
+    </script>
+</body>
+
+</html>
